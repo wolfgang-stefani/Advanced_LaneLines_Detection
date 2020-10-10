@@ -3,8 +3,9 @@
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 ## Field test on german highway A99 in Munich
-To test the software on real videos recorded by myself, I took my wife out on a special date. She had to drive the car and I recorded a video of a ride on a highway. Then I tested the algorithm on this video. Here ist the result. To see the full clip, click here: https://youtu.be/lbWOEhMHyzg
-![](./output_images/9.png)
+To test the software on real videos recorded by myself, I took my wife out on a special date. She had to drive the car and I recorded a video of a ride on a highway. Then I tested the algorithm on this video. Here ist the result:
+[![IMAGE ALT TEXT HERE](./output_images/9.png)](https://youtu.be/lbWOEhMHyzg)
+
 
 In this project, a software pipeline was written to identify the lane boundaries in a video from a front-facing camera on a car.
 The full code can be found in the file "P2.ipynb".
