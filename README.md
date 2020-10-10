@@ -1,39 +1,92 @@
-## Advanced Lane Finding
-[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
-![Lanes Image](./examples/example_output.jpg)
-
-In this project, your goal is to write a software pipeline to identify the lane boundaries in a video, but the main output or product we want you to create is a detailed writeup of the project.  Check out the [writeup template](https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup.  
-
-Creating a great writeup:
----
-A great writeup should include the rubric points as well as your description of how you addressed each point.  You should include a detailed description of the code used in each step (with line-number references and code snippets where necessary), and links to other supporting documents or external references.  You should include images in your writeup to demonstrate how your code works with examples.  
-
-All that said, please be concise!  We're not looking for you to write a book here, just a brief description of how you passed each rubric point, and references to the relevant code :). 
-
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup.
-
-The Project
----
-
-The goals / steps of this project are the following:
-
-* Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
-* Apply a distortion correction to raw images.
-* Use color transforms, gradients, etc., to create a thresholded binary image.
-* Apply a perspective transform to rectify binary image ("birds-eye view").
-* Detect lane pixels and fit to find the lane boundary.
-* Determine the curvature of the lane and vehicle position with respect to center.
-* Warp the detected lane boundaries back onto the original image.
-* Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
-
-The images for camera calibration are stored in the folder called `camera_cal`.  The images in `test_images` are for testing your pipeline on single frames.  If you want to extract more test images from the videos, you can simply use an image writing method like `cv2.imwrite()`, i.e., you can read the video in frame by frame as usual, and for frames you want to save for later you can write to an image file.  
-
-To help the reviewer examine your work, please save examples of the output from each stage of your pipeline in the folder called `output_images`, and include a description in your writeup for the project of what each image shows.    The video called `project_video.mp4` is the video your pipeline should work well on.  
-
-The `challenge_video.mp4` video is an extra (and optional) challenge for you if you want to test your pipeline under somewhat trickier conditions.  The `harder_challenge.mp4` video is another optional challenge and is brutal!
-
-If you're feeling ambitious (again, totally optional though), don't stop there!  We encourage you to go out and take video of your own, calibrate your camera and show us how you would implement this project from scratch!
-
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
-
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Advanced Lane Finding\n",
+    "\n",
+    "[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)\n",
+    "![Lanes Image](./examples/example_output.jpg)\n",
+    "\n",
+    "In this project, a software pipeline was written to identify the lane boundaries in a video. \n",
+    "\n",
+    "The steps of this project are the following:\n",
+    "\n",
+    "* Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.\n",
+    "* Apply a distortion correction to raw images.\n",
+    "* Use color transforms, gradients, etc., to create a thresholded binary image.\n",
+    "* Apply a perspective transform to rectify binary image (\"birds-eye view\").\n",
+    "* Detect lane pixels and fit a polynomial to find the lane boundary.\n",
+    "* Determine the curvature of the lane and vehicle position with respect to center.\n",
+    "* Warp the detected lane boundaries back onto the original image.\n",
+    "* Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.\n",
+    "\n",
+    "The images for camera calibration are stored in the folder called `camera_cal`.  The images in `test_images` are for testing the pipeline on single frames. If you want to extract more test images from the videos, you can simply use an image writing method like `cv2.imwrite()`, i.e., you can read the video in frame by frame as usual, and for frames you want to save for later you can write to an image file.\n",
+    "\n",
+    "## Pipeline in a nutshell (for a very detailed description including how camera calibration is implemented, see this file [add LINK]):\n",
+    "\n",
+    "## Step 1: Read in an image\n",
+    "\n",
+    "![](./output_images/original.png)\n",
+    "\n",
+    "\n",
+    "## Step 2: Distortion correction\n",
+    "![](./writeup/1.png)\n",
+    "\n",
+    "\n",
+    "## Step 3: Thresholding\n",
+    "Various combinations of color and gradient thresholds were tested.\n",
+    "(Note: This step is visualized with “test4.jpg” instead of “test6.jpg” as for all the other steps because here you can see the advantages of s-channel when road has bad sun/shadow conditions)\n",
+    "\n",
+    "![](./writeup/2.png)\n",
+    "\n",
+    "### Steps in detail:\n",
+    "![](./writeup/3.png)\n",
+    "\n",
+    "\n",
+    "## Step 4: Perspective Transform\n",
+    "First, identifying four source points src (pick four points in a trapezoidal shape (similar to region masking) and after four destination points dst.\n",
+    "![](./writeup/4.png)\n",
+    "\n",
+    "## Step 5: Grayscale\n",
+    "![](./writeup/5.png)\n",
+    "\n",
+    "## Step 6: Detect lane pixels (sliding windows method) and fit a polynomial to find the lane boundary\n",
+    "Explicit Decision which pixels are part of the lines and which belong to the left respectively to the right line.\n",
+    "![](./writeup/6.png)\n",
+    "\n",
+    "### Steps in detail:\n",
+    "![](./writeup/7.png)\n",
+    "\n",
+    "## Step 7: Drawing\n",
+    "This includes:\n",
+    "a) Draw the lines on a blank (zeroed) image\n",
+    "b) Warp this image back to original image space using inverse perspective Matrix (Minv)\n",
+    "c) Combine the result with the original image\n",
+    "![](./writeup/8.png)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
