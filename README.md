@@ -1,9 +1,13 @@
 # Advanced Lane Finding
 
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
-![example_output.jpg](attachment:example_output.jpg)
 
-In this project, a software pipeline was written to identify the lane boundaries in a video from a front-facing camera on a car.. 
+## Field test on german highway A99 in Munich
+To test the software on real videos recorded by myself, I took my wife out on a special date. She had to drive the car and I recorded a video of a ride on a highway. Then I tested the algorithm on this video. Here ist the result. To see the full clip, click here: https://youtu.be/lbWOEhMHyzg
+![](./output_images/9.png)
+
+In this project, a software pipeline was written to identify the lane boundaries in a video from a front-facing camera on a car.
+The full code can be found in the file "P2.ipynb".
 
 The steps of this project are the following:
 
@@ -15,10 +19,6 @@ The steps of this project are the following:
 * Determine the curvature of the lane and vehicle position with respect to center.
 * Warp the detected lane boundaries back onto the original image.
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
-
-## Field test on german highway A99
-Click here to see the full clip: https://youtu.be/lbWOEhMHyzg
-![](./output_images/9.png)
 
 The images for camera calibration are stored in the folder called `camera_cal`.  The images in `test_images` are for testing the pipeline on single frames. If you want to extract more test images from the videos, you can simply use an image writing method like `cv2.imwrite()`, i.e., you can read the video in frame by frame as usual, and for frames you want to save for later you can write to an image file.
 
