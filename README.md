@@ -2,6 +2,8 @@
 
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/wolfgang-stefani/Advanced_LaneLines_Detection/master)
+
 ## Field test on german highway A99 in Munich
 To test the software on real videos recorded by myself, I took my wife out on a special date. She had to drive the car and I recorded a video of a ride on a highway. Then I tested the algorithm on this video. Here ist the result:
 [![IMAGE ALT TEXT HERE](./output_images/9.png)](https://youtu.be/lbWOEhMHyzg)
