@@ -4,13 +4,17 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/wolfgang-stefani/Advanced_LaneLines_Detection/master)
 
-## Field test on german highway A99 in Munich
-To test the software on real videos recorded by myself, I took my wife out on a special date. She had to drive the car and I recorded a video of a ride on a highway. Then I tested the algorithm on this video. Here ist the result:
-[![IMAGE ALT TEXT HERE](./output_images/9.png)](https://youtu.be/lbWOEhMHyzg)
-
-
 In this project, a software pipeline was written to identify the lane boundaries in a video from a front-facing camera on a car.
 The full code can be found in the file "P2.ipynb".
+
+## Field test on german highway A99 in Munich
+I wanted to know if this algorithm runs on real videos taken by myself. So, what did I do? I took my wife out on the next highway from our apartment. She had to drive the car, so I was able to adjust the camera and record a video. Then I tested the algorithm on this video.
+Here ist the result:
+[![IMAGE ALT TEXT HERE](./output_images/9.png)](https://youtu.be/lbWOEhMHyzg)
+
+Additionally, in this longer clip the radius of the curvature and the offset of the car with respect to the center are provided:
+[![IMAGE ALT TEXT HERE](./output_images/10.png)](https://youtu.be/If4e2Oq2cU4)
+
 
 The steps of this project are the following:
 
