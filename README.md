@@ -13,7 +13,7 @@ Here ist the result:
 [![IMAGE ALT TEXT HERE](./output_images/9.png)](https://youtu.be/lbWOEhMHyzg)
 
 Additionally, in this longer clip the radius of the curvature and the offset of the car with respect to the center are provided:
-[![IMAGE ALT TEXT HERE](./output_images/10.png)](https://youtu.be/If4e2Oq2cU4)
+[![IMAGE ALT TEXT HERE](./output_images/10.png)](https://youtu.be/1D6195fExJs)
 
 
 The steps of this project are the following:
