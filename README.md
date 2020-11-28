@@ -5,7 +5,8 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/wolfgang-stefani/Advanced_LaneLines_Detection/master)
 
 In this project, a software pipeline was written to identify the lane boundaries in a video from a front-facing camera on a car.
-The full code can be found in the file "P2.ipynb".
+The full code can be found in this [IPython Notebook.](https://github.com/wolfgang-stefani/Advanced_LaneLines_Detection/blob/master/P2.ipynb)
+
 
 ## Field test on german highway A99 in Munich
 I wanted to know if this algorithm runs on real videos taken by myself. So, what did I do? I took my wife out on the next highway from our apartment. She had to drive the car, so I was able to adjust the camera and record a video. Then I tested the algorithm on this video.
